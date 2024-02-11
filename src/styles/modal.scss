@@ -1,0 +1,71 @@
+.modal {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  width: 30rem;
+  min-height: 10rem;
+  max-height: max-content;
+  background-color: $color-light-white;
+  visibility: hidden;
+  padding: 2rem 1rem;
+  border-radius: 0.3rem;
+  border: 1px solid rgba(43, 43, 43, 0.268);
+  text-align: center;
+  transform: perspective(120rem) translateZ(-40rem) rotateX(60deg);
+  opacity: 0;
+  &.show {
+    z-index: 100;
+    transform-style: preserve-3d;
+    transition: all 0.3s ease-in-out;
+    transform: perspective(120rem) translateZ(0rem) rotateX(0deg);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+  button {
+    background-color: transparent;
+    border: 2px solid $color-inform;
+    color: $color-primary;
+    height: 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 0.15rem;
+    margin-top: 1rem;
+    padding: 0 2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      background-color: $color-inform;
+      color: $color-light-white;
+    }
+    &:active {
+      background-color: $color-inform;
+      color: $color-light-white;
+    }
+  }
+}
+
+.modal-background {
+  opacity: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  background-color: rgba(54, 83, 90, 0.5);
+  backdrop-filter: blur(0.2rem);
+  &.show {
+    opacity: 1;
+    z-index: 100;
+  }
+}
+
+body.show-modal {
+  overflow: hidden;
+}
