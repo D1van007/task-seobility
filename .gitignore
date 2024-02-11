@@ -1,1 +1,10 @@
-node_modules
+# Папка с собранным кодом
+/dist
+
+# Файлы конфигурации npm и yarn
+/node_modules
+/yarn.lock
+
+# Логи и временные файлы
+*.log
+*.tmp
